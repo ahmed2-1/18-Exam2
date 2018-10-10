@@ -27,7 +27,7 @@ def main():
 
     run_test_init()
     run_test_rain()
-    # run_test_get_total_rain_amount()
+    run_test_get_total_rain_amount()
     # run_test_merge_cloud()
 
 
@@ -83,6 +83,7 @@ class Cloud(object):
             self.water = self.capacity
         else:
             self.water = water
+        self.total_rain_amount = 0
 
     def rain(self, rain_amount):
         """
@@ -134,6 +135,7 @@ class Cloud(object):
             self.water = 0
         else:
             self.water -= rain_amount
+        self.total_rain_amount += rain_amount
         return rain_amount
 
     def get_total_rain_amount(self):
@@ -166,9 +168,9 @@ class Cloud(object):
           :rtype: int | float
         """
         # ---------------------------------------------------------------------
-        # TODO: 4. Implement and test this method.
+        # DONE: 4. Implement and test this method.
         # ---------------------------------------------------------------------
-
+        return self.total_rain_amount
 
     def merge_cloud(self, another_cloud):
         """
