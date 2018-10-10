@@ -28,7 +28,7 @@ def main():
     run_test_init()
     run_test_rain()
     run_test_get_total_rain_amount()
-    # run_test_merge_cloud()
+    run_test_merge_cloud()
 
 
 ###############################################################################
@@ -201,8 +201,12 @@ class Cloud(object):
             #   cloud4.water      is 10
         """
         # ---------------------------------------------------------------------
-        # TODO: 5. Implement and test this method.
+        # DONE: 5. Implement and test this method.
         # ---------------------------------------------------------------------
+        self.capacity += another_cloud.capacity
+        self.water += another_cloud.water
+        another_cloud.capacity = 0
+        another_cloud.water = 0
 
 
 ###############################################################################
